@@ -1,0 +1,208 @@
+/* ==== HEADER ==== */
+header {
+    z-index: 99999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(20px);
+    transition: .6s ease;
+}
+
+header.sticky {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: var(--box-shadow);
+}
+
+.nav-bar {
+    position: relative;
+    height: calc(4rem + 1rem);
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    transition: .6s ease;
+}
+
+header.sticky .nav-bar {
+    height: calc(2.5rem + 1rem);
+}
+
+.nav-bar .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    border: 1px solid #623686;
+    border-radius: 50px;
+    padding: 8px 8px;
+}
+
+.nav-bar .logo:hover {
+    color: var(--hover-color);
+    //background-color: #f0f0f0;
+    box-shadow: 0 0 10px var(--hover-color), 0 0 10px var(--hover-color), 0 0 10px var(--hover-color), 0 0 10px var(--hover-color);
+}
+
+.logo .initial-t {
+    color: #c770f07a;
+}
+
+.logo .initial-m {
+    color: #c770f07a;
+}
+
+.nav-items a {
+    position: relative;
+    color: var(--first-color);
+    font-size: 1.05em;
+    font-weight: 100;
+    letter-spacing: .5px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-items a.active {
+    color: var(--second-color);
+}
+
+.nav-items a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--second-color);
+    border-radius: 50px;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-items a:not(:last-child) {
+    margin-right: 50px;
+}
+
+.nav-items a:hover {
+    color: var(--second-color);
+}
+
+.nav-items a:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+.nav-items a i {
+    font-size: 1em;
+    margin-right: 8px;
+}
+
+.nav-menu-btn {
+    display: none;
+}
+
+.nav-close-btn {
+    display: none;
+}
+
+/* ==== MEDIA QUERY max-width 1070px ==== */
+@media screen and (max-width: 1070px) {
+    /* ==== HEADER NAVIGATION MENU ==== */
+    .navigation {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--transparent-color-01);
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    .navigation.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .nav-items {
+        position: relative;
+        background: var(--modal-bg-color);
+        width: 600px;
+        max-width: 600px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+    .navigation.active .nav-items {
+        transform: translateY(0);
+    }
+
+    .nav-items a {
+        margin: 15px 50px;
+    }
+
+    .nav-close-btn {
+        position: absolute;
+        background: none;
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-close-btn i {
+        font-size: 1.5em;
+        color: var(--first-color);
+    }
+
+    .nav-menu-btn {
+        background: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-menu-btn i {
+        font-size: 1.5em;
+        color: var(--first-color);
+    }
+
+    .nav-menu-btn,
+    .nav-close-btn {
+        transition: all 0.3s ease;
+    }
+
+    .btn-click-effect {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transform: scale(0.95);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu-btn:active {
+        transform: scale(0.95);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}

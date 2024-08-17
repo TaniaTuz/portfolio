@@ -1,0 +1,38 @@
+<!-- ==== SERVICES SECTION ==== -->
+<section class="services section" id="services">
+    <div class="container flex-center">
+        <h1 class="section-title-01">Services</h1>
+        <h2 class="section-title-02">Services</h2>
+        <div class="content">
+            <div class="services-description">
+                <h3>What I provide</h3>
+            </div>
+            <ul class="service-list">
+                <li class="service-container" *ngFor="let service of services; let i = index">
+                    <div class="service-card">
+                        <i class="fa-solid" [ngClass]="service.icon"></i>
+                        <h3>{{ service.title }}</h3>
+                        <div class="learn-more-btn" (click)="openModal(i)">
+                            Learn More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </div>
+                    </div>
+                    <div class="service-modal flex-center" [ngClass]="{'active': isModalOpen === i}">
+                        <div class="service-modal-body">
+                            <i class="fa-solid fa-xmark modal-close-btn" (click)="closeModal()"></i>
+                            <h3>{{ service.title }}</h3>
+                            <h4>{{ service.subtitle }}</h4>
+                            <p>{{ service.description }}</p>
+                            <h4>What I provide</h4>
+                            <ul>
+                                <li *ngFor="let item of service.items">
+                                    <i class="fa-solid fa-circle-check"></i> {{ item }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

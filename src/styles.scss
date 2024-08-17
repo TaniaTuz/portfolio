@@ -1,0 +1,384 @@
+:root {
+    /* ==== MAIN THEME COLORS ==== */
+    --first-color: #fff;
+    --second-color: #c770f0;
+    --third-color: #a9afc3;
+    /* ==== HOVER COLORS ==== */
+    --hover-color: #c770f0;
+    /* ==== BACKGROUND COLORS ==== */
+    --body-bg-color: #fefefe;
+    --card-bg-color: #fff;
+    --modal-bg-color: #151616f5;
+    --bg-transparent-color: rgba(0, 0, 0, 0.1);
+    --transparent-color-01: rgba(0, 0, 0, 0.1);
+    --transparent-color-02: rgba(106, 89, 209, 0.1);
+    --line-color: #d7d7d7;
+    /* ==== COLOR FILTER ==== */
+    --color-filter: invert(1);
+    /* ==== BOX SHADOW ==== */
+    --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+    /* ==== FONT SIZE ==== */
+    --small-font-size: 0.9em;
+    --normal-font-size: 1em;
+    /* ==== SCROLL BAR COLORS ==== */
+    --scroll-bar-color: #c5cadf;
+    --scroll-thumb-color: #70768a;
+    --scroll-thumb-hover-color: #454f6b;
+}
+
+//.dark-theme {
+    /* ==== MAIN THEME COLORS ==== */
+    //--first-color: #fff;
+    //--second-color: #c770f0;
+    //--third-color: #a9afc3;
+    /* ==== BACKGROUND COLORS ==== */
+    //--body-bg-color: #0e1b31;
+    //--card-bg-color: #132347;
+    //--modal-bg-color: #151616f5;
+    //--bg-transparent-color: rgba(255, 255, 255, 0.1);
+    //--transparent-color-01: rgba(255, 255, 255, 0.1);
+    //--line-color: #454f6b;
+    /* ==== COLOR FILTER ==== */
+    //--color-filter: invert(0);
+    /* ==== SCROLL BAR COLORS ==== */
+    //--scroll-bar-color: #c1ceff;
+    //--scroll-thumb-color: #282f4e;
+    //--scroll-thumb-hover-color: #454f6b;
+//}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--first-color);
+    background: linear-gradient(rgb(0 0 0 / 28%), rgb(0 0 0 / 28%)), url('../public/assets/images/background/background_3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 2rem 0 0 0;
+    transition: .5s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* ==== COMMON STYLES FOR ALL SECTIONS ==== */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    position: relative;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6rem 2rem 2rem;
+}
+
+.sub-section {
+    position: relative;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6rem 0;
+}
+
+.section-title-01 {
+    font-size: 4.5em;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(to top, transparent 0%, var(--first-color) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: .1;
+}
+
+.section-title-02 {
+    font-size: 2.5em;
+    font-weight: 700;
+    transform: translateY(-80px);
+}
+
+.section-title-02:before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    right: 0;
+    bottom: 0;
+    background: var(--second-color);
+}
+
+.container {
+    position: relative;
+    flex-direction: column;
+}
+
+.btn {
+    color: #fff !important;
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 25px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    background-color: #623686 !important;
+    border-color: #623686 !important;
+}
+
+.btn:hover {
+    color: #fff !important;
+    background-color: #6d20c5d7 !important;
+    border-color: #6d20c5d7 !important;
+}
+
+/* ==== MEDIA QUERY max-width 1070px ==== */
+@media screen and (max-width: 1070px) {
+    /* ==== HOME SECTION ==== */
+    .home .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-container .info {
+        max-width: 100%;
+    }
+
+    .home-container .info h2 {
+        font-size: 2.5em;
+    }
+
+    .home-container .info h3 {
+        font-size: 1.8em;
+    }
+
+    .home-container .info p {
+        font-size: 0.9rem;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .home-container .media-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .home-container .media-icons a {
+        font-size: 1.3em;
+        margin: 0 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .home-container .home-img {
+        margin-top: 2rem;
+    }
+
+    .home-container .home-img img {
+        width: 80%;
+    }
+
+    .home .scroll-down {
+        margin-top: 10px;
+    }
+
+    .home .scroll-down i {
+        font-size: 1em;
+    }
+
+    /* ==== ABOUT SECTION ==== */
+    /*.about .container .content {
+        display: grid;
+        width: 100%;
+        row-gap: 20px;
+    }
+
+    .about-img img {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .about-info {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .about-info .professional-list {
+        flex-direction: column;
+    }
+
+    .about-info .professional-list .list-item {
+        justify-content: start;
+    }*/
+
+    /* ==== GET IN TOUCH ==== */
+    .get-in-touch .contact-card {
+        display: grid;
+        width: 100%;
+    }
+
+    .contact-card .title {
+        font-size: 0.8rem;
+        line-height: 50px;
+    }
+
+    /* ==== OUR CLIENTS ==== */
+    .client-swiper .swiper-slide {
+        flex-direction: column;
+    }
+
+    .client-details {
+        text-align: center;
+    }
+
+    /* ==== CONTACT SECTION ==== */
+    .contact .content {
+        flex-direction: column;
+        font-size: 0.9rem;
+    }
+
+    .contact .contact-left {
+        margin-bottom: 40px;
+    }
+
+    .contact-form .second-row {
+        flex-direction: column;
+    }
+
+    .contact-form .second-row input {
+        width: 100%;
+    }
+
+    /* ==== FOOTER SECTION ==== */
+    footer .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-container .about, .footer-container .info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .footer-container .info ul {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer-container .info ul li {
+        margin: 5px 0;
+    }
+
+    .footer-container .hr {
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 10px 0 22px;
+    }
+}
+
+/* ==== MEDIA QUERY max-width 730px ==== */
+@media screen and (max-width: 730px) {
+    /* ==== COMMON STYLES FOR ALL SECTIONS ==== */
+    body {
+        margin: 5rem 0 0 0;
+    }
+
+    .section-title-01 {
+        font-size: 3em;
+    }
+
+    .section-title-02 {
+        font-size: 2em;
+        transform: translateY(-65px);
+    }
+
+    /* ==== HOME SECTION ==== */
+    .home {
+        padding: 2rem 1rem;
+    }
+
+    .home .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-container .info {
+        font-size: 0.85rem;
+        margin-bottom: 2rem;
+    }
+
+    .home-container .info h2 {
+        font-size: 2em;
+    }
+
+    .home-container .info h3 {
+        font-size: 1.5em;
+    }
+
+    .home-container .info p {
+        font-size: 0.8rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .home-container .media-icons {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .home-container .media-icons a {
+        font-size: 1.2em;
+        margin: 0 8px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-container .home-img {
+        margin-top: 2rem;
+    }
+
+    .home-container .home-img img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .home .scroll-down {
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
+
+    .home .scroll-down i {
+        font-size: 1em;
+    }
+
+    /* ==== GET IN TOUCH ==== */
+    .get-in-touch .contact-card {
+        display: grid;
+    }
+
+    .contact-card .title {
+        font-size: 0.6rem;
+        line-height: 40px;
+    }
+
+    .contact-card .contact-btn .btn {
+        font-size: 0.8rem;
+    }
+}

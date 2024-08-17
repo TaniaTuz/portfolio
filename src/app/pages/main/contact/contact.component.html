@@ -1,0 +1,50 @@
+<!-- ==== CONTACT SECTION ==== -->
+<section class="contact section" id="contact">
+    <div class="container flex-center">
+        <h1 class="section-title-01">Contacto</h1>
+        <h2 class="section-title-02">Contacto</h2>
+        <div class="content">
+            <div class="contact-left">
+                <ul class="contact-list">
+                    <li>
+                        <h3 class="item-title"><i class="fa-solid fa-envelope"></i>Correo Electrónico</h3>
+                        <span><a href="mailto:taniamtztuz@gmail.com">{{ myEmail }}</a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-right">
+                <form [formGroup]="form" class="contact-form">
+                    <div class="first-row">
+                        <mat-form-field>
+                            <input matInput placeholder="Nombre" formControlName="name">
+                        </mat-form-field>
+                    </div>
+                    <div class="first-row">
+                        <mat-form-field>
+                            <input matInput placeholder="Correo electrónico" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                    <div class="first-row">
+                        <mat-form-field>
+                            <input matInput placeholder="Asunto" formControlName="subject">
+                        </mat-form-field>
+                    </div>
+                    <div class="first-row">
+                        <mat-form-field>
+                            <textarea matInput placeholder="Mensaje" formControlName="message"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <button class="btn" type="submit" (click)="submit()">Enviar mensaje <i
+                        class="fa-solid fa-paper-plane"></i></button>
+
+                    <div *ngIf="successMessage" class="alert alert-success">
+                        {{ successMessage }}
+                    </div>
+                    <div *ngIf="errorMessage" class="alert alert-error">
+                        {{ errorMessage }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

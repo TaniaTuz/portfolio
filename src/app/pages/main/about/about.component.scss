@@ -1,0 +1,135 @@
+/* ==== ABOUT SECTION ==== */
+/*
+.about-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+} */
+
+.about .container .content {
+    column-gap: 40px;
+    width: 100%;
+}
+
+.about-img {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0 auto;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-info .description {
+    max-width: 600px;
+}
+
+.about-info .description h3 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about-info .description h4 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about-info .description h4 span {
+    color: var(--second-color);
+}
+
+.about-info .description p {
+    color: var(--third-color);
+    font-size: var(--normal-font-size);
+    margin-bottom: 15px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--line-color);
+}
+
+.about-info .professional-list {
+    display: flex;
+    column-gap: 30px;
+}
+
+.about-info .professional-list .list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.about-info .professional-list .list-item h3 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.about-info .professional-list .list-item span {
+    color: var(--third-color);
+    font-size: var(--small-font-size);
+}
+
+@media screen and (max-width: 1070px) {
+    .about .container .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        text-align: center;
+    }
+
+    .about-img {
+        max-width: 300px;
+    }
+
+    .about-info .description {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-info .professional-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 30px;
+        text-align: center;
+    }
+
+    .about-info .professional-list .list-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .about-img {
+        max-width: 200px;
+    }
+
+    .about-info .professional-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 30px;
+        text-align: center;
+    }
+
+    .about-info .professional-list .list-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+}
